@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  border: none;
+  outline: none;
+  appearance: none;
+  background: transparent;
+  color: inherit;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: white;
+  background-image: radial-gradient( transparent 10px, rgb(16, 12, 238) 15px);
+  background-size: 20px 20px;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin: auto;
+  color:aqua;
+}
+
+.developer span {
+  font-weight: 600;
+  color: #00ff62;
+}
+
+.calculator {
+  border: 3px solid rgba(255, 255, 255, 0.486);
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.displayWindow {
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1rem;
+  height: 250px;
+  flex-direction: column;
+}
+
+.displayWindow .expression {
+  overflow-x: auto;
+  width: 100%;
+  text-align: right;
+  color: rgb(49, 49, 49);
+  font-weight: 600;
+  scrollbar-width: none;
+  margin-top: 5px;
+}
+
+.displayWindow .result {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-left: 5px;
+  width:  auto;
+  color: rgb(255, 255, 255);
+}
+
+
+.keysWindow {
+  background-color: rgb(29, 29, 29);
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.keysWindow button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.3rem;
+  cursor: crosshair;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+
+}
+
+.keysWindow button:hover {
+  background-color: rgba(9, 7, 29, 0.356);
+}
+
+/* .keys_scientific {
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+} */
+
+/* .line {
+  margin-block: 1.5rem;
+  width: 50px;
+  background-color: rgba(36, 0, 196, 0.08);
+} */
+
+.keys_basic {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.keys_basic .equal {
+  background-color: #00ff62;
+  color: #0f0f0f;
+}
+
+.keys_basic .number {
+  color: white;
+  font-weight: 600;
+}
+
+@media (max-width: 610px) {
+  body {
+    padding: 1rem;
+  }
+
+  .keysWindow {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .keys_scientific {
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
